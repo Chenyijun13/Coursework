@@ -12,6 +12,12 @@ class Customer:     #define customer class, with two actions,renting and returni
         self.car = None
         self.day = 0
 
+class VIP(Customer):
+    def __init__(self, name):
+        Customer.__init__(self, name)
+'''
+Inherit the methods of the parent class and define the price separately at the calculates function.
+'''
 
 
 

@@ -1,5 +1,5 @@
 from rentalshop import RentalShop
-from customer import Customer
+from customer import Customer,VIP
 
 
 def find_customer(customers, name):# Determine if the consumer has rented a car
@@ -24,15 +24,20 @@ def main():
             name = input("Please enter your name: ")
             customer = find_customer(customers, name)
             if customer is None:
-                customer = Customer(name)
+                vip = input("Are you a VIP?(Y|N) ")
+                vip = vip.upper()
+                if vip == "Y":
+                    customer = VIP(name)
+                else:
+                    customer = Customer(name)
                 customers.append(customer)
             if customer.car is not None:
                 print("The customer {} had already rent a car".format(customer.name))
             else:
-                car = input("Please enter the car type: ")
+                car = input("Please choose the car type: ")
                 while car not in ["Hatchback", "Sedan", "SUV"]:
-                    print("The type you entered is not available,please please re-enter your choice")
-                    car = input("Please enter the car type: ")
+                    print("The type you entered is not available,please re-enter your choice")
+                    car = input("Please choose the car type: ")
                 day = input("Please enter the number of days you would like to rent: ")
                 while not day.isdigit():
                     print("Please enter a positive integer!")
@@ -54,6 +59,8 @@ def main():
             break
         print()
 
-
+''' 
+For testing. When the module is run directly, the code will be run, when the module is imported, the code is not run.
+'''
 if __name__ == "__main__":
     main()

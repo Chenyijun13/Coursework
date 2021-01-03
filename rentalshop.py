@@ -25,13 +25,20 @@ class RentalShop:
                 print("\tRent for a longer period: ${}".format(self.get_price(key, "long")))
 
         if count  == 0:
-            print("No cars available")
+            print("Sorry,All cars are rented out!")
 
 
     def get_price(self, car, period, customer=None):
         '''
-        find the price of the different cars for different period
+         Return different prices for different rental periods and for VIPs or not.
         '''
+        if isinstance(customer, VIP):
+            if car == "Hatchback":
+                return 20
+            elif car  == "Sedan":
+                return 35
+            else:
+                return 80
         if period == "short":
             if car == "Hatchback":
                 return 30
@@ -54,13 +61,13 @@ class RentalShop:
             print("Dear {},you has rent the {} for {} days".format(customer.name, car, day))
             return True
         else:
-            print("No such type of vehicle available")
+            print("No such type of car available now")
             return False
 
 
     def return_car(self, customer, car, day):
         if car not in self.cars:
-            print("Sorry,this type is not available in my shop")
+            print("Sorry,this type is not rent in my shop")
             return False
         period = "long"
         if day < 7:
