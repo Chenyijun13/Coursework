@@ -1,3 +1,10 @@
+"""Name: Yijun Chen; UoBNo:lm20306; StudentID:2033739.
+This is the main program to handle the whole process of renting a car.
+
+"""
+
+
+
 from rentalshop import RentalShop
 from customer import Customer,VIP
 
