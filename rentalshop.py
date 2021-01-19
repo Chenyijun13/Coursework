@@ -1,11 +1,12 @@
+'''
+Chenyijun,Part2
+'''
 from customer import *
 
 class RentalShop:
     def __init__(self):
-        '''
-        itialize the car pool
-        '''
-        self.cars = {
+    #itialize the car pool
+                self.cars = {
             "Hatchback":4,
             "Sedan":3, 
             "SUV": 3
