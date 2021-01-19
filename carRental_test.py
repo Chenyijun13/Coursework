@@ -1,3 +1,9 @@
+"""Name: Yijun Chen; UoBNo:lm20306; StudentID:2033739.
+This code is used to check the availability of the program
+when incorrect values and information are entered
+
+"""
+
 import unittest
 from rentalshop import *
 from customer import *
